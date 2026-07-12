@@ -1,0 +1,72 @@
+import { useState } from 'react'
+import PageHero from '../components/PageHero.jsx'
+
+const FILTERS = ['All', 'Press', 'Video', 'Photos']
+
+// PLACEHOLDER — Lorem ipsum, replace with real content
+const MEDIA_ITEMS = [
+  { id: 1, category: 'Press', title: 'Lorem ipsum dolor sit amet' },
+  { id: 2, category: 'Video', title: 'Consectetur adipiscing elit' },
+  { id: 3, category: 'Photos', title: 'Sed do eiusmod tempor incididunt' },
+  { id: 4, category: 'Press', title: 'Ut labore et dolore magna aliqua' },
+  { id: 5, category: 'Video', title: 'Ut enim ad minim veniam' },
+  { id: 6, category: 'Photos', title: 'Quis nostrud exercitation ullamco' },
+]
+
+function Media() {
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const visibleItems =
+    activeFilter === 'All'
+      ? MEDIA_ITEMS
+      : MEDIA_ITEMS.filter((item) => item.category === activeFilter)
+
+  return (
+    <div>
+      <PageHero
+        eyebrow="Media"
+        title="Media"
+        lead="Press coverage, videos and photos from UtopiaX Xperiences."
+      />
+
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-wrap justify-center gap-3">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                onClick={() => setActiveFilter(filter)}
+                className={`rounded-full border px-5 py-2 font-body text-sm font-medium transition-colors ${
+                  activeFilter === filter
+                    ? 'border-brand-red bg-brand-red text-white'
+                    : 'border-gray-300 text-brand-black hover:border-brand-red'
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* TODO: replace with data fetched from API */}
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleItems.map((item) => (
+              <div key={item.id} className="rounded-2xl border border-gray-200 p-6">
+                <div className="mb-4 h-40 rounded-xl bg-gray-100" />
+                <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
+                  {item.category}
+                </p>
+                {/* PLACEHOLDER — Lorem ipsum, replace with real content */}
+                <h3 className="mt-2 font-display text-lg font-bold text-brand-black">
+                  {item.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default Media
