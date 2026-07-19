@@ -6,24 +6,81 @@ const PILLARS = [
     blurb:
       "Christina delivers keynotes that will challenge you to step into your future and dare you to impact the world.",
     to: '/openmindx',
+    badge: 'bg-brand-maroon',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+        <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
+        <line x1="12" y1="18" x2="12" y2="22" />
+        <line x1="8" y1="22" x2="16" y2="22" />
+      </svg>
+    ),
   },
   {
     heading: 'PROGRAMS',
     blurb: 'We are Creativity and Innovation catalysts, inspiring business growth through Experience.',
     to: '/ideationworx',
+    badge: 'bg-brand-brick',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M9 18h6" />
+        <path d="M10 22h4" />
+        <path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.7v.6h6.4v-.6c0-.7.3-1.3.8-1.7A7 7 0 0 0 12 2Z" />
+      </svg>
+    ),
   },
   {
     heading: 'RETREATS',
     blurb: 'Each Retreat Experience is unique and purpose-designed. Grow in Body, Mind, Heart and Soul.',
     to: '/lumierex',
+    badge: 'bg-brand-rose',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M12 22c-4-2-7-6-7-11a7 7 0 0 1 14 0c0 5-3 9-7 11Z" />
+        <path d="M12 22V8" />
+      </svg>
+    ),
   },
 ]
 
 const CENTRES = [
-  { label: 'Body', subtitle: 'Home' },
-  { label: 'Mind', subtitle: 'Work' },
-  { label: 'Heart', subtitle: 'Passion' },
-  { label: 'Soul', subtitle: 'Purpose' },
+  {
+    label: 'Body',
+    subtitle: 'Home',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <circle cx="12" cy="7" r="3.2" />
+        <path d="M5 21v-1.5a7 7 0 0 1 14 0V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1Z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Mind',
+    subtitle: 'Work',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M12 2l1.9 6.6L20.5 10l-6.6 1.9L12 18.5l-1.9-6.6L3.5 10l6.6-1.9L12 2Z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Heart',
+    subtitle: 'Passion',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0 1 12 5.4 5.5 5.5 0 0 1 21.5 12c-2.5 4.65-9.5 9-9.5 9Z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Soul',
+    subtitle: 'Purpose',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
+        <path d="M12 2c2.2 3 3.8 5.2 3.8 8.6a3.8 3.8 0 0 1-7.6 0c0-1.3.4-2.2.9-3-.1 1.7.7 2.8.7 2.8-.6-2.3.5-5 2.2-8.4Z" />
+      </svg>
+    ),
+  },
 ]
 
 // TODO: replace hardcoded cards with API data
@@ -82,6 +139,10 @@ const MEDIA_CARDS = [
   },
 ]
 
+function BrandStripe() {
+  return <div className="h-1.5 w-full bg-gradient-to-r from-brand-rose via-brand-red to-brand-maroon" />
+}
+
 function Home() {
   return (
     <div>
@@ -107,6 +168,8 @@ function Home() {
           </Link>
         </div>
       </section>
+
+      <BrandStripe />
 
       <section className="bg-white px-6 py-16">
         <div className="mx-auto max-w-3xl text-center">
@@ -140,6 +203,11 @@ function Home() {
                 to={pillar.to}
                 className="group flex flex-col rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-red-50/50 p-10 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-rose/30 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
+                <span
+                  className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white ${pillar.badge}`}
+                >
+                  {pillar.icon}
+                </span>
                 <h3 className="font-display text-xl font-bold tracking-wide text-brand-maroon">
                   {pillar.heading}
                 </h3>
@@ -172,7 +240,10 @@ function Home() {
                 key={centre.label}
                 className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-[0_8px_30px_rgba(255,100,82,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(255,100,82,0.15)]"
               >
-                <p className="font-display text-2xl font-bold text-brand-rose">{centre.label}</p>
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-brand-rose">
+                  {centre.icon}
+                </span>
+                <p className="mt-4 font-display text-2xl font-bold text-brand-rose">{centre.label}</p>
                 <p className="mt-2 font-body text-sm text-gray-500">{centre.subtitle}</p>
               </div>
             ))}
@@ -212,6 +283,36 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-rose px-6 py-16 text-white">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-2xl font-bold uppercase tracking-wide">
+            Xperience Seekers
+          </h2>
+          <p className="mt-2 font-body text-white/80">
+            For the latest programs, events, workshops and news.
+          </p>
+          {/* TODO: wire up to email list / backend once available */}
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row"
+          >
+            <input
+              type="email"
+              required
+              placeholder="Email address"
+              aria-label="Email address"
+              className="flex-1 rounded-full border-0 px-5 py-3 font-body text-brand-maroon placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              type="submit"
+              className="rounded-full bg-brand-maroon px-6 py-3 font-body font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+            >
+              Sign up
+            </button>
+          </form>
         </div>
       </section>
 

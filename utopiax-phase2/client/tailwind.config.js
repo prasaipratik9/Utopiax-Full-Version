@@ -7,6 +7,7 @@ export default {
         brand: {
           red: "#FA3E32", // reserved for the logo mark only
           rose: "#FF6452", // site-wide accent red (buttons, links, tags, nav)
+          brick: "#9C2B1F", // mid-dark accent — pillar/icon differentiation
           maroon: "#6B1414", // deep red — replaces black everywhere except the logo
           black: "#000000", // logo wordmark only
         },
