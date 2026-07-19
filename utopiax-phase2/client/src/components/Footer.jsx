@@ -6,7 +6,7 @@ function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-black text-white">
+    <footer className="bg-brand-maroon text-white">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
@@ -37,7 +37,7 @@ function Footer() {
             <ul className="mt-3 space-y-2 font-body text-sm text-gray-400">
               {SOCIALS.map((social) => (
                 <li key={social}>
-                  <span className="cursor-pointer transition-colors hover:text-brand-red">
+                  <span className="cursor-pointer transition-colors hover:text-brand-rose">
                     {social}
                   </span>
                 </li>
@@ -46,7 +46,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-gray-800 pt-6 text-center font-body text-xs text-gray-500">
+        <div className="mt-10 border-t border-white/10 pt-6 text-center font-body text-xs text-gray-400">
           &copy; {year} UtopiaX. All rights reserved.
         </div>
       </div>

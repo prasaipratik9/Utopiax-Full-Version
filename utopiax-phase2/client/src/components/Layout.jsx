@@ -4,7 +4,7 @@ import Footer from './Footer.jsx'
 
 function Layout() {
   return (
-    <div className="flex min-h-screen flex-col font-body text-brand-black">
+    <div className="flex min-h-screen flex-col font-body text-brand-maroon">
       <Header />
       <main className="flex-1">
         <Outlet />

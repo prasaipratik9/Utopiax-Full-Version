@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-body text-brand-black;
+  @apply font-body text-brand-maroon;
 }
 
 h1,

@@ -39,8 +39,8 @@ function Media() {
                 onClick={() => setActiveFilter(filter)}
                 className={`rounded-full border px-5 py-2 font-body text-sm font-medium transition-all duration-200 ${
                   activeFilter === filter
-                    ? 'border-brand-red bg-brand-red text-white shadow-[0_4px_14px_rgba(250,62,50,0.3)]'
-                    : 'border-gray-300 text-brand-black hover:border-brand-red hover:text-brand-red'
+                    ? 'border-brand-rose bg-brand-rose text-white shadow-[0_4px_14px_rgba(255,100,82,0.3)]'
+                    : 'border-gray-300 text-brand-maroon hover:border-brand-rose hover:text-brand-rose'
                 }`}
               >
                 {filter}
@@ -53,14 +53,14 @@ function Media() {
             {visibleItems.map((item) => (
               <div
                 key={item.id}
-                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
+                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
                 <div className="mb-4 h-40 rounded-xl bg-gray-100" />
-                <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
+                <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
                   {item.category}
                 </p>
                 {/* PLACEHOLDER — Lorem ipsum, replace with real content */}
-                <h3 className="mt-2 font-display text-lg font-bold text-brand-black">
+                <h3 className="mt-2 font-display text-lg font-bold text-brand-maroon">
                   {item.title}
                 </h3>
               </div>

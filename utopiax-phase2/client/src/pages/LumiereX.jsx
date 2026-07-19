@@ -43,7 +43,7 @@ function LumiereX() {
 
       <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-3xl font-bold text-brand-black">
+          <h2 className="text-center font-display text-3xl font-bold text-brand-maroon">
             Featured Retreats
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
