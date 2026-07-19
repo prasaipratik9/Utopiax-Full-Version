@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import XperienceSeekers from '../components/XperienceSeekers.jsx'
+import RecentPosts from '../components/RecentPosts.jsx'
 
 const PILLARS = [
   {
@@ -115,28 +116,6 @@ const XPERIENCES = [
     tag: 'OpenMindX',
     title: 'Creativity, Innovation & Business 101',
     body: 'How can we encourage teams, in-house or outsourced, to think creatively, find the gaps and innovate solutions?',
-  },
-]
-
-// TODO: replace hardcoded cards with API data
-const MEDIA_CARDS = [
-  {
-    tag: 'ARTICLE',
-    date: '16 Jul · Innovation',
-    title: "Why AI Can't Do the Most Important Thing We Do...",
-    body: 'On the difference between being reliably right and the kind of productive wrongness that creates something genuinely new.',
-  },
-  {
-    tag: 'ARTICLE',
-    date: '16 May · Innovation',
-    title: "I'm Allowing Me to Be Me",
-    body: 'A look at authenticity and transparency at work, and what it means to show up the same way everywhere.',
-  },
-  {
-    tag: 'ARTICLE',
-    date: '13 May · Innovation',
-    title: 'A Family Legacy of Failure and Success',
-    body: 'Failure is a lesson, not a closed door — as long as something is learnt from it.',
   },
 ]
 
@@ -289,38 +268,7 @@ function Home() {
 
       <XperienceSeekers />
 
-      <section className="bg-gray-50 px-6 py-28">
-        <div className="mx-auto max-w-6xl">
-          <header className="max-w-xl">
-            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-brand-rose">
-              From the blog
-            </p>
-            <h2 className="font-display text-4xl font-bold text-brand-maroon">Recent Media</h2>
-          </header>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {MEDIA_CARDS.map((card, idx) => (
-              <div
-                key={idx}
-                className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
-              >
-                <div className="relative h-48 w-full overflow-hidden bg-gray-200">
-                  <div className="h-full w-full bg-gradient-to-br from-gray-200 to-gray-300 transition-transform duration-500 group-hover:scale-105" />
-                  <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold uppercase text-brand-rose shadow-[0_2px_8px_rgba(0,0,0,0.12)]">
-                    {card.tag}
-                  </span>
-                </div>
-                <div className="px-6 pb-6">
-                  <p className="mt-4 font-body text-xs text-gray-400">{card.date}</p>
-                  <h3 className="mt-1 font-display text-lg font-bold text-brand-maroon">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm text-gray-500">{card.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RecentPosts />
 
       <section className="relative overflow-hidden bg-brand-maroon px-6 py-24 text-white">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(255,100,82,0.25),transparent_60%)]" />

@@ -55,7 +55,7 @@ function Footer() {
               Contact
             </h3>
             <ul className="mt-3 space-y-2 font-body text-sm text-gray-400">
-              <li>hello@utopiax.global</li>
+              <li>info@utopiax.global</li>
               <li>+61 000 000 000</li>
               <li>Australia</li>
             </ul>

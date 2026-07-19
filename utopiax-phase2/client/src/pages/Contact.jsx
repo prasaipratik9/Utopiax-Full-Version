@@ -34,7 +34,7 @@ function Contact() {
               Contact details
             </h2>
             <ul className="mt-6 space-y-3 font-body text-gray-700">
-              <li>hello@utopiax.global</li>
+              <li>info@utopiax.global</li>
               <li>+61 000 000 000</li>
               <li>Australia</li>
             </ul>
