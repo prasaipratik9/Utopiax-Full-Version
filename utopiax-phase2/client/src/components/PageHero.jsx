@@ -1,7 +1,8 @@
 function PageHero({ eyebrow, title, lead }) {
   return (
-    <section className="bg-brand-black px-6 py-20 text-white">
-      <div className="mx-auto max-w-4xl text-center">
+    <section className="relative overflow-hidden bg-brand-black px-6 py-20 text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_0%,rgba(250,62,50,0.22),transparent_60%)]" />
+      <div className="relative mx-auto max-w-4xl text-center">
         <p className="font-body text-sm font-semibold uppercase tracking-widest text-brand-red">
           {eyebrow}
         </p>

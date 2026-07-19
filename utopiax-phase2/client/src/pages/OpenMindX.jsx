@@ -43,7 +43,7 @@ function OpenMindX() {
           </p>
           <p>Christina designs customised presentations by request.</p>
 
-          <blockquote className="border-l-4 border-brand-red bg-gray-50 p-6 font-display text-xl italic text-brand-black">
+          <blockquote className="rounded-2xl border-l-4 border-brand-red bg-gray-50 p-6 font-display text-xl italic text-brand-black shadow-[0_8px_30px_rgba(250,62,50,0.08)]">
             "Christina is an Entrepreneurial Futurist and Business Accelerator. Her deep
             expertise is matched by unrivalled passion. She is a gifted mentor who can future
             proof your business."
@@ -107,7 +107,7 @@ function OpenMindX() {
           <div className="mt-10 text-center">
             <Link
               to="/contact"
-              className="inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white shadow-[0_4px_14px_rgba(250,62,50,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
             >
               Book a keynote
             </Link>

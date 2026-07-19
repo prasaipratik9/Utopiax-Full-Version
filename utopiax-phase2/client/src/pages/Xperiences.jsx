@@ -29,7 +29,10 @@ function Xperiences() {
           {/* TODO: replace with data fetched from API */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((item) => (
-              <div key={item.id} className="rounded-2xl border border-gray-200 p-6">
+              <div
+                key={item.id}
+                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
+              >
                 <div className="mb-4 h-40 rounded-xl bg-gray-100" />
                 <h3 className="font-display text-lg font-bold text-brand-black">
                   {item.title}
@@ -45,7 +48,7 @@ function Xperiences() {
               type="button"
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page === 1}
-              className="rounded-full border border-gray-300 px-4 py-2 font-body text-sm font-medium text-brand-black disabled:opacity-40"
+              className="rounded-full border border-gray-300 px-4 py-2 font-body text-sm font-medium text-brand-black transition-colors duration-200 hover:border-brand-red hover:text-brand-red disabled:opacity-40 disabled:hover:border-gray-300 disabled:hover:text-brand-black"
             >
               Previous
             </button>
@@ -56,7 +59,7 @@ function Xperiences() {
               type="button"
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page === totalPages}
-              className="rounded-full border border-gray-300 px-4 py-2 font-body text-sm font-medium text-brand-black disabled:opacity-40"
+              className="rounded-full border border-gray-300 px-4 py-2 font-body text-sm font-medium text-brand-black transition-colors duration-200 hover:border-brand-red hover:text-brand-red disabled:opacity-40 disabled:hover:border-gray-300 disabled:hover:text-brand-black"
             >
               Next
             </button>

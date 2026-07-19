@@ -25,7 +25,7 @@ function IdeationWorX() {
 
       <section className="px-6 py-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-gray-200 p-8">
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]">
             <h2 className="font-display text-2xl font-bold text-brand-black">
               Startup Bootcamps
             </h2>
@@ -33,7 +33,7 @@ function IdeationWorX() {
             <p className="mt-4 font-body leading-relaxed text-gray-700">{LOREM_PARAGRAPH}</p>
           </div>
 
-          <div className="rounded-2xl border border-gray-200 p-8">
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]">
             <h2 className="font-display text-2xl font-bold text-brand-black">
               Innovation Strategy
             </h2>
@@ -62,13 +62,13 @@ function IdeationWorX() {
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-center">
           <Link
             to="/xperiences"
-            className="inline-block rounded-full border-2 border-brand-black px-8 py-3 font-body font-semibold text-brand-black transition-colors hover:bg-brand-black hover:text-white"
+            className="inline-block rounded-full border-2 border-brand-black px-8 py-3 font-body font-semibold text-brand-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-black hover:text-white"
           >
             View workshops
           </Link>
           <Link
             to="/contact"
-            className="inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white transition-opacity hover:opacity-90"
+            className="inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white shadow-[0_4px_14px_rgba(250,62,50,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
           >
             Enquire
           </Link>

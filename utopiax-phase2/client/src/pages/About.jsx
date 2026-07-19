@@ -30,7 +30,7 @@ function About() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-bold text-brand-black">Our Founder</h2>
           <div className="mt-8 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
-            <div className="h-40 w-40 flex-shrink-0 rounded-full bg-gray-100" />
+            <div className="h-40 w-40 flex-shrink-0 rounded-full bg-gray-100 shadow-[0_8px_30px_rgba(250,62,50,0.1)] ring-4 ring-red-50" />
             <div>
               <h3 className="font-display text-xl font-bold text-brand-black">Christina</h3>
               <p className="font-body text-sm text-gray-500">Founder, UtopiaX</p>
@@ -48,7 +48,10 @@ function About() {
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {TEAM.map((member) => (
-              <div key={member.id} className="text-center">
+              <div
+                key={member.id}
+                className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
+              >
                 <div className="mx-auto h-32 w-32 rounded-full bg-gray-200" />
                 <h3 className="mt-4 font-display font-bold text-brand-black">{member.name}</h3>
                 <p className="font-body text-sm text-gray-500">{member.role}</p>
@@ -68,9 +71,11 @@ function About() {
           {/* PLACEHOLDER — Lorem ipsum, replace with real content */}
           <ul className="mt-6 space-y-3 font-body text-lg text-gray-700">
             {VALUES.map((value) => (
-              <li key={value} className="flex items-start gap-2">
-                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-red" />
-                <span>{value}</span>
+              <li
+                key={value}
+                className="rounded-r-2xl border-l-4 border-brand-red bg-gray-50 px-5 py-4 shadow-[0_4px_14px_rgba(250,62,50,0.06)]"
+              >
+                {value}
               </li>
             ))}
           </ul>
