@@ -8,9 +8,8 @@ const PILLARS = [
     to: '/openmindx',
   },
   {
-    heading: 'STARTUP BOOTCAMPS',
-    // PLACEHOLDER — Lorem ipsum, replace with real content
-    blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    heading: 'PROGRAMS',
+    blurb: 'We are Creativity and Innovation catalysts, inspiring business growth through Experience.',
     to: '/ideationworx',
   },
   {
@@ -30,41 +29,56 @@ const CENTRES = [
 // TODO: replace hardcoded cards with API data
 const XPERIENCES = [
   {
-    tag: 'CHALLENGE',
+    tag: 'IdeationWorX',
     title: 'SingularityU Australia Global Impact Challenge',
     body: 'What moonshot can you imagine that would solve a global grand challenge using exponential technology?',
   },
   {
-    tag: 'SUMMIT',
+    tag: 'OpenMindX',
     title: 'SingularityU Australia Summit',
-    body: "The world's top speakers and experts on exponentially accelerating technologies.",
+    body: "Brings together the world's top speakers and experts on exponentially accelerating technologies.",
   },
   {
-    tag: 'RETREAT',
+    tag: 'LumiereX',
     title: 'Unleash Possibility — Philippines Retreat',
-    body: 'For those with fire in their belly. Village Empowerment Programs for legacy through service.',
+    body: 'For those with a fire in their belly and passion in their heart, leaving a legacy through service in the Village Empowerment Programs.',
+  },
+  {
+    tag: 'LumiereX',
+    title: 'Unlocking Creativity and Innovation — A Greek Island Retreat',
+    body: 'Amplify your potential and expand your leadership and collaboration capacity on Ithaca, Greece.',
+  },
+  {
+    tag: 'IdeationWorX',
+    title: 'Design Thinking Workshops',
+    body: 'Customer-centric problem-solving strategies for SMEs, departments and corporates — we come to you.',
+  },
+  {
+    tag: 'OpenMindX',
+    title: 'Creativity, Innovation & Business 101',
+    body: 'How can we encourage teams, in-house or outsourced, to think creatively, find the gaps and innovate solutions?',
   },
 ]
 
 // TODO: replace hardcoded cards with API data
 const MEDIA_CARDS = [
   {
-    tag: 'VIDEO',
-    date: 'Feb 2025 · Innovation',
-    title: 'SingularityU Australia Summit — Opening Keynote',
-    body: 'Christina on exponential technologies and the future of innovation.',
+    tag: 'ARTICLE',
+    date: '16 Jul · Innovation',
+    title: "Why AI Can't Do the Most Important Thing We Do...",
+    body: 'On the difference between being reliably right and the kind of productive wrongness that creates something genuinely new.',
   },
   {
     tag: 'ARTICLE',
-    date: 'Jan 2025 · Creativity',
-    title: 'Vivid Ideas — Dream Out Loud',
-    body: 'Why imagination is the first technology — and how teams can practice moonshot thinking.',
+    date: '16 May · Innovation',
+    title: "I'm Allowing Me to Be Me",
+    body: 'A look at authenticity and transparency at work, and what it means to show up the same way everywhere.',
   },
   {
-    tag: 'AUDIO',
-    date: 'Dec 2024 · Leadership',
-    title: 'The Science of Askology — Podcast',
-    body: 'A conversation on embedding bold asks into everyday leadership.',
+    tag: 'ARTICLE',
+    date: '13 May · Innovation',
+    title: 'A Family Legacy of Failure and Success',
+    body: 'Failure is a lesson, not a closed door — as long as something is learnt from it.',
   },
 ]
 
@@ -91,6 +105,17 @@ function Home() {
           >
             Get in touch
           </Link>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="font-body text-lg leading-relaxed text-gray-600">
+            We curate Xperiences that get people and organisations thinking differently, so they
+            can create fearless change — through innovative programs, inspiring keynotes and
+            unique retreats. Our aim is to open hearts and minds to what's possible, so together
+            we change the world. That's our Moonshot.
+          </p>
         </div>
       </section>
 
