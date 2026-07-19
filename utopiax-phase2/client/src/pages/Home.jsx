@@ -92,17 +92,26 @@ function Home() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="bg-white px-6 py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-3xl font-bold text-brand-black">
-            What We Do
-          </h2>
+          <header className="max-w-xl">
+            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-brand-red">
+              Our pillars
+            </p>
+            <h2 className="font-display text-4xl font-bold text-brand-black">
+              Three ways we work with you
+            </h2>
+            <p className="mt-3 max-w-xl font-body text-gray-500">
+              Speaking, ideation workshops, and transformational retreats — each designed for
+              individuation and real impact.
+            </p>
+          </header>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {PILLARS.map((pillar) => (
               <Link
                 key={pillar.to}
                 to={pillar.to}
-                className="group flex flex-col rounded-2xl border border-gray-200 p-8 transition-colors hover:border-brand-red"
+                className="group flex flex-col rounded-3xl border border-gray-200 p-10 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="font-display text-xl font-bold tracking-wide text-brand-black">
                   {pillar.heading}
@@ -117,49 +126,59 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-gray-50 px-6 py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-center font-body text-sm font-semibold uppercase tracking-widest text-brand-red">
-            Body · Mind · Heart · Soul
-          </p>
-          <h2 className="mt-4 text-center font-display text-3xl font-bold text-brand-black">
-            Four centres of influence
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center font-body text-gray-600">
-            When Home, Work, Passion and Purpose align, the impossible becomes possible.
-          </p>
+          <header className="max-w-xl">
+            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-brand-red">
+              Body · Mind · Heart · Soul
+            </p>
+            <h2 className="font-display text-4xl font-bold text-brand-black">
+              Four centres of influence
+            </h2>
+            <p className="mt-3 max-w-2xl font-body text-gray-500">
+              When Home, Work, Passion and Purpose align, the impossible becomes possible.
+            </p>
+          </header>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-4">
             {CENTRES.map((centre) => (
-              <div key={centre.label} className="text-center">
-                <p className="font-display text-lg font-bold text-brand-red">{centre.label}</p>
-                <p className="mt-2 font-body text-gray-500">{centre.subtitle}</p>
+              <div
+                key={centre.label}
+                className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm"
+              >
+                <p className="font-display text-2xl font-bold text-brand-red">{centre.label}</p>
+                <p className="mt-2 font-body text-sm text-gray-500">{centre.subtitle}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="bg-white px-6 py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-center font-body text-sm font-semibold uppercase tracking-widest text-brand-red">
-            Featured
-          </p>
-          <h2 className="mt-4 text-center font-display text-3xl font-bold text-brand-black">
-            Upcoming Xperiences
-          </h2>
+          <header className="max-w-xl">
+            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-brand-red">
+              Featured
+            </p>
+            <h2 className="font-display text-4xl font-bold text-brand-black">
+              Upcoming Xperiences
+            </h2>
+          </header>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {XPERIENCES.map((xperience, idx) => (
-              <div key={idx} className="flex flex-col rounded-2xl border border-gray-200 p-8">
-                <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
+              <div
+                key={idx}
+                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <span className="mb-4 inline-block w-fit rounded-full bg-gray-100 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
                   {xperience.tag}
-                </p>
-                <h3 className="mt-3 font-display text-xl font-bold text-brand-black">
+                </span>
+                <h3 className="font-display text-xl font-bold text-brand-black">
                   {xperience.title}
                 </h3>
-                <p className="mt-4 flex-1 font-body text-gray-600">{xperience.body}</p>
+                <p className="mt-3 flex-1 font-body text-sm text-gray-500">{xperience.body}</p>
                 <Link
                   to="/xperiences"
-                  className="mt-6 font-body font-semibold text-brand-red transition-opacity hover:opacity-80"
+                  className="mt-6 inline-block font-body text-sm font-semibold text-brand-red hover:opacity-75"
                 >
                   View all Xperiences &rarr;
                 </Link>
@@ -169,26 +188,32 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-gray-50 px-6 py-28">
         <div className="mx-auto max-w-6xl">
-          <p className="text-center font-body text-sm font-semibold uppercase tracking-widest text-brand-red">
-            From the Blog
-          </p>
-          <h2 className="mt-4 text-center font-display text-3xl font-bold text-brand-black">
-            Recent Media
-          </h2>
+          <header className="max-w-xl">
+            <p className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-brand-red">
+              From the blog
+            </p>
+            <h2 className="font-display text-4xl font-bold text-brand-black">Recent Media</h2>
+          </header>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {MEDIA_CARDS.map((card, idx) => (
-              <div key={idx} className="rounded-2xl border border-gray-200 bg-white p-6">
-                <div className="mb-4 h-40 rounded-xl bg-gray-100" />
-                <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
-                  {card.tag}
-                </p>
-                <p className="mt-2 font-body text-sm text-gray-400">{card.date}</p>
-                <h3 className="mt-3 font-display text-lg font-bold text-brand-black">
-                  {card.title}
-                </h3>
-                <p className="mt-3 font-body text-sm text-gray-600">{card.body}</p>
+              <div
+                key={idx}
+                className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm"
+              >
+                <div className="relative h-48 w-full bg-gray-200">
+                  <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold uppercase text-brand-red shadow-sm">
+                    {card.tag}
+                  </span>
+                </div>
+                <div className="px-6 pb-6">
+                  <p className="mt-4 font-body text-xs text-gray-400">{card.date}</p>
+                  <h3 className="mt-1 font-display text-lg font-bold text-brand-black">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 font-body text-sm text-gray-500">{card.body}</p>
+                </div>
               </div>
             ))}
           </div>
