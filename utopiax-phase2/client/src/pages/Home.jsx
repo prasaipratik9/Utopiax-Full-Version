@@ -71,8 +71,10 @@ const MEDIA_CARDS = [
 function Home() {
   return (
     <div>
-      <section className="bg-brand-black px-6 py-24 text-white">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-brand-black px-6 py-24 text-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_20%_0%,rgba(250,62,50,0.28),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_90%_100%,rgba(250,62,50,0.16),transparent_55%)]" />
+        <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-sm font-semibold uppercase tracking-widest text-brand-red">
             UtopiaX
           </p>
@@ -85,7 +87,7 @@ function Home() {
           </p>
           <Link
             to="/contact"
-            className="mt-8 inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white transition-opacity hover:opacity-90"
+            className="mt-8 inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white shadow-[0_4px_14px_rgba(250,62,50,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
           >
             Get in touch
           </Link>
@@ -111,7 +113,7 @@ function Home() {
               <Link
                 key={pillar.to}
                 to={pillar.to}
-                className="group flex flex-col rounded-3xl border border-gray-200 p-10 shadow-sm transition-shadow hover:shadow-md"
+                className="group flex flex-col rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-red-50/50 p-10 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/30 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
               >
                 <h3 className="font-display text-xl font-bold tracking-wide text-brand-black">
                   {pillar.heading}
@@ -143,7 +145,7 @@ function Home() {
             {CENTRES.map((centre) => (
               <div
                 key={centre.label}
-                className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm"
+                className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-[0_8px_30px_rgba(250,62,50,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(250,62,50,0.15)]"
               >
                 <p className="font-display text-2xl font-bold text-brand-red">{centre.label}</p>
                 <p className="mt-2 font-body text-sm text-gray-500">{centre.subtitle}</p>
@@ -167,9 +169,9 @@ function Home() {
             {XPERIENCES.map((xperience, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
               >
-                <span className="mb-4 inline-block w-fit rounded-full bg-gray-100 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
+                <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-red">
                   {xperience.tag}
                 </span>
                 <h3 className="font-display text-xl font-bold text-brand-black">
@@ -178,7 +180,7 @@ function Home() {
                 <p className="mt-3 flex-1 font-body text-sm text-gray-500">{xperience.body}</p>
                 <Link
                   to="/xperiences"
-                  className="mt-6 inline-block font-body text-sm font-semibold text-brand-red hover:opacity-75"
+                  className="mt-6 inline-block font-body text-sm font-semibold text-brand-red transition-opacity hover:opacity-75"
                 >
                   View all Xperiences &rarr;
                 </Link>
@@ -200,10 +202,11 @@ function Home() {
             {MEDIA_CARDS.map((card, idx) => (
               <div
                 key={idx}
-                className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm"
+                className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(250,62,50,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(250,62,50,0.18)]"
               >
-                <div className="relative h-48 w-full bg-gray-200">
-                  <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold uppercase text-brand-red shadow-sm">
+                <div className="relative h-48 w-full overflow-hidden bg-gray-200">
+                  <div className="h-full w-full bg-gradient-to-br from-gray-200 to-gray-300 transition-transform duration-500 group-hover:scale-105" />
+                  <span className="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-bold uppercase text-brand-red shadow-[0_2px_8px_rgba(0,0,0,0.12)]">
                     {card.tag}
                   </span>
                 </div>
@@ -217,6 +220,22 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-brand-black px-6 py-24 text-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(250,62,50,0.25),transparent_60%)]" />
+        <div className="relative mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-4xl font-bold">Ready to add your factor X?</h2>
+          <p className="mt-4 font-body text-gray-300">
+            Book a complimentary conversation with our team.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-8 inline-block rounded-full bg-brand-red px-8 py-3 font-body font-semibold text-white shadow-[0_4px_14px_rgba(250,62,50,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+          >
+            Contact us
+          </Link>
         </div>
       </section>
     </div>
