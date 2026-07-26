@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import XperienceSeekers from '../components/XperienceSeekers.jsx'
 import RecentPosts from '../components/RecentPosts.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 const WORK_WITH_US = [
   'Launch new ideas or develop new products',
@@ -20,16 +21,19 @@ const FEATURED = [
     tag: 'IdeationWorX',
     title: '2019 SingularityU Australia Global Impact Challenge',
     body: 'What moonshot can you imagine that would solve a global grand challenge using exponential technology?',
+    art: 'challenge',
   },
   {
     tag: 'IdeationWorX',
     title: 'Design Thinking Workshops',
     body: 'Customer-centric problem-solving strategies for SMEs, departments and corporates across Medical, Manufacturing, Finance and Education — we come to you.',
+    art: 'design',
   },
   {
     tag: 'IdeationWorX',
     title: 'Global Impact: A Future by Design',
     body: 'Sharing what the SingularityU Community is learning about connecting a global network of innovators — biotech, agtech, fintech, medtech, the latest in AI, and a few surprises. Join us for breakfast.',
+    art: 'globe',
   },
 ]
 
@@ -137,15 +141,22 @@ function IdeationWorX() {
             {FEATURED.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
-                  {item.tag}
-                </span>
-                <h3 className="font-display text-xl font-bold text-brand-maroon">
-                  {item.title}
-                </h3>
-                <p className="mt-3 flex-1 font-body text-sm text-gray-500">{item.body}</p>
+                <div className="h-44 w-full overflow-hidden">
+                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                    <CardArt variant={item.art} className="h-full w-full" />
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-8 pt-6">
+                  <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
+                    {item.tag}
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-brand-maroon">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 flex-1 font-body text-sm text-gray-500">{item.body}</p>
+                </div>
               </div>
             ))}
           </div>

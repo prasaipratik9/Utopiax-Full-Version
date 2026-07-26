@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 const PAGE_SIZE = 6
+
+const ART_CYCLE = ['challenge', 'summit', 'philippines', 'greece', 'design', 'business', 'globe', 'askology']
 
 // PLACEHOLDER — Lorem ipsum, replace with real content
 const XPERIENCES = Array.from({ length: 13 }, (_, i) => ({
   id: i + 1,
   title: `Xperience ${i + 1}`,
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  art: ART_CYCLE[i % ART_CYCLE.length],
 }))
 
 function Xperiences() {
@@ -33,7 +37,9 @@ function Xperiences() {
                 key={item.id}
                 className="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <div className="mb-4 h-40 rounded-xl bg-gray-100" />
+                <div className="mb-4 h-40 overflow-hidden rounded-xl">
+                  <CardArt variant={item.art} className="h-full w-full" />
+                </div>
                 <h3 className="font-display text-lg font-bold text-brand-maroon">
                   {item.title}
                 </h3>

@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import PageHero from '../components/PageHero.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 const FILTERS = ['All', 'Press', 'Video', 'Photos']
+
+const CATEGORY_ART = { Press: 'press', Video: 'video', Photos: 'camera' }
 
 // PLACEHOLDER — Lorem ipsum, replace with real content
 const MEDIA_ITEMS = [
@@ -55,7 +58,9 @@ function Media() {
                 key={item.id}
                 className="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <div className="mb-4 h-40 rounded-xl bg-gray-100" />
+                <div className="mb-4 h-40 overflow-hidden rounded-xl">
+                  <CardArt variant={CATEGORY_ART[item.category]} className="h-full w-full" />
+                </div>
                 <p className="font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
                   {item.category}
                 </p>

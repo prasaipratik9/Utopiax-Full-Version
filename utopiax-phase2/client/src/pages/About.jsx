@@ -1,4 +1,5 @@
 import PageHero from '../components/PageHero.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 // PLACEHOLDER — Lorem ipsum, replace with real content
 const LOREM_PARAGRAPH =
@@ -30,7 +31,10 @@ function About() {
         <div className="mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-bold text-brand-maroon">Our Founder</h2>
           <div className="mt-8 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
-            <div className="h-40 w-40 flex-shrink-0 rounded-full bg-gray-100 shadow-[0_8px_30px_rgba(255,100,82,0.1)] ring-4 ring-red-50" />
+            {/* TODO: replace illustration with founder photo when supplied */}
+            <div className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-full shadow-[0_8px_30px_rgba(255,100,82,0.1)] ring-4 ring-red-50">
+              <CardArt variant="portrait" className="h-full w-full" />
+            </div>
             <div>
               <h3 className="font-display text-xl font-bold text-brand-maroon">Christina</h3>
               <p className="font-body text-sm text-gray-500">Founder, UtopiaX</p>
@@ -52,7 +56,10 @@ function About() {
                 key={member.id}
                 className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <div className="mx-auto h-32 w-32 rounded-full bg-gray-200" />
+                {/* TODO: replace illustration with team photo when supplied */}
+                <div className="mx-auto h-32 w-32 overflow-hidden rounded-full ring-4 ring-red-50">
+                  <CardArt variant="portrait" className="h-full w-full" />
+                </div>
                 <h3 className="mt-4 font-display font-bold text-brand-maroon">{member.name}</h3>
                 <p className="font-body text-sm text-gray-500">{member.role}</p>
                 {/* PLACEHOLDER — Lorem ipsum, replace with real content */}

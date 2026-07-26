@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import XperienceSeekers from '../components/XperienceSeekers.jsx'
 import RecentPosts from '../components/RecentPosts.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 const TESTIMONIALS = [
   'Thank you for creating possibility through mind, body and spirit. It has been amazing.',
@@ -14,6 +15,7 @@ const FEATURED = [
     tag: 'LumiereX',
     location: 'Philippines',
     status: 'Bookings now open',
+    art: 'philippines',
     title: 'Unleash Possibility — Philippines Retreat',
     body: 'This week is for those with a fire in their belly and passion in their heart. Those who want to leave a legacy through serving others will find opportunity in the Village Empowerment Programs.',
   },
@@ -21,6 +23,7 @@ const FEATURED = [
     tag: 'LumiereX',
     location: 'Ithaca, Greece',
     status: 'Expressions of interest open',
+    art: 'greece',
     title: 'Unlocking Creativity and Innovation — A Greek Island Retreat',
     body: 'Amplify your potential, improve your productivity and increase your power for idea generation. Expand your leadership and collaboration capacity. Create the future. Reset with yoga.',
   },
@@ -102,8 +105,14 @@ function LumiereX() {
             {FEATURED.map((item, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
+                <div className="h-52 w-full overflow-hidden">
+                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                    <CardArt variant={item.art} className="h-full w-full" />
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-8 pt-6">
                 <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
                   {item.tag}
                 </span>
@@ -117,6 +126,7 @@ function LumiereX() {
                   {item.status}
                 </p>
                 <p className="mt-3 flex-1 font-body text-sm text-gray-500">{item.body}</p>
+                </div>
               </div>
             ))}
           </div>

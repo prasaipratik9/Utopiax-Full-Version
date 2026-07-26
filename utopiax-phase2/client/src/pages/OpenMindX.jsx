@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import XperienceSeekers from '../components/XperienceSeekers.jsx'
 import RecentPosts from '../components/RecentPosts.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 // TODO: replace hardcoded cards with API data
 const KEYNOTES = [
@@ -9,16 +10,19 @@ const KEYNOTES = [
     tag: 'OpenMindX',
     title: 'SingularityU Australia Summit',
     body: "Brings together the world's top speakers and experts on exponentially accelerating technologies.",
+    art: 'summit',
   },
   {
     tag: 'OpenMindX',
     title: 'Creativity, Innovation & Business 101',
     body: "Traditional ways of doing things won't cut it anymore. A keynote on how teams — in-house or outsourced — learn to find the gaps and innovate solutions.",
+    art: 'business',
   },
   {
     tag: 'OpenMindX',
     title: "Don't Ask Don't Get — The Science of Askology",
     body: 'What are the common traits of successful people, businesses and organisations? A keynote on embedding the behaviours behind Askology into everyday practice.',
+    art: 'askology',
   },
 ]
 
@@ -109,15 +113,22 @@ function OpenMindX() {
             {KEYNOTES.map((keynote, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
-                  {keynote.tag}
-                </span>
-                <h3 className="font-display text-xl font-bold text-brand-maroon">
-                  {keynote.title}
-                </h3>
-                <p className="mt-3 flex-1 font-body text-sm text-gray-500">{keynote.body}</p>
+                <div className="h-44 w-full overflow-hidden">
+                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                    <CardArt variant={keynote.art} className="h-full w-full" />
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-8 pt-6">
+                  <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
+                    {keynote.tag}
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-brand-maroon">
+                    {keynote.title}
+                  </h3>
+                  <p className="mt-3 flex-1 font-body text-sm text-gray-500">{keynote.body}</p>
+                </div>
               </div>
             ))}
           </div>

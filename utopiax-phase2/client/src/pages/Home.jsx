@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import XperienceSeekers from '../components/XperienceSeekers.jsx'
 import RecentPosts from '../components/RecentPosts.jsx'
+import CardArt from '../components/CardArt.jsx'
 
 const PILLARS = [
   {
@@ -91,31 +92,37 @@ const XPERIENCES = [
     tag: 'IdeationWorX',
     title: 'SingularityU Australia Global Impact Challenge',
     body: 'What moonshot can you imagine that would solve a global grand challenge using exponential technology?',
+    art: 'challenge',
   },
   {
     tag: 'OpenMindX',
     title: 'SingularityU Australia Summit',
     body: "Brings together the world's top speakers and experts on exponentially accelerating technologies.",
+    art: 'summit',
   },
   {
     tag: 'LumiereX',
     title: 'Unleash Possibility — Philippines Retreat',
     body: 'For those with a fire in their belly and passion in their heart, leaving a legacy through service in the Village Empowerment Programs.',
+    art: 'philippines',
   },
   {
     tag: 'LumiereX',
     title: 'Unlocking Creativity and Innovation — A Greek Island Retreat',
     body: 'Amplify your potential and expand your leadership and collaboration capacity on Ithaca, Greece.',
+    art: 'greece',
   },
   {
     tag: 'IdeationWorX',
     title: 'Design Thinking Workshops',
     body: 'Customer-centric problem-solving strategies for SMEs, departments and corporates — we come to you.',
+    art: 'design',
   },
   {
     tag: 'OpenMindX',
     title: 'Creativity, Innovation & Business 101',
     body: 'How can we encourage teams, in-house or outsourced, to think creatively, find the gaps and innovate solutions?',
+    art: 'business',
   },
 ]
 
@@ -129,6 +136,27 @@ function Home() {
       <section className="relative overflow-hidden bg-brand-maroon px-6 py-24 text-white">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_20%_0%,rgba(255,100,82,0.28),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_90%_100%,rgba(255,100,82,0.16),transparent_55%)]" />
+        {/* decorative compass motif — the four centres of influence */}
+        <svg
+          viewBox="0 0 400 400"
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 opacity-20"
+        >
+          {[70, 110, 150, 190].map((r) => (
+            <circle key={r} cx="200" cy="200" r={r} fill="none" stroke="white" strokeWidth="1.5" strokeDasharray={r % 80 === 30 ? '3 9' : 'none'} />
+          ))}
+          <path d="M200 40 L216 184 L360 200 L216 216 L200 360 L184 216 L40 200 L184 184 Z" fill="white" opacity="0.5" />
+          <circle cx="200" cy="200" r="12" fill="#FF6452" />
+        </svg>
+        <svg
+          viewBox="0 0 400 400"
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-32 -top-24 h-72 w-72 opacity-10"
+        >
+          {[90, 140, 190].map((r) => (
+            <circle key={r} cx="200" cy="200" r={r} fill="none" stroke="white" strokeWidth="2" />
+          ))}
+        </svg>
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="font-body text-sm font-semibold uppercase tracking-widest text-brand-rose">
             UtopiaX
@@ -245,21 +273,28 @@ function Home() {
             {XPERIENCES.map((xperience, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_8px_30px_rgba(255,100,82,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(255,100,82,0.18)]"
               >
-                <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
-                  {xperience.tag}
-                </span>
-                <h3 className="font-display text-xl font-bold text-brand-maroon">
-                  {xperience.title}
-                </h3>
-                <p className="mt-3 flex-1 font-body text-sm text-gray-500">{xperience.body}</p>
-                <Link
-                  to="/xperiences"
-                  className="mt-6 inline-block font-body text-sm font-semibold text-brand-rose transition-opacity hover:opacity-75"
-                >
-                  View all Xperiences &rarr;
-                </Link>
+                <div className="h-44 w-full overflow-hidden">
+                  <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+                    <CardArt variant={xperience.art} className="h-full w-full" />
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col p-8 pt-6">
+                  <span className="mb-4 inline-block w-fit rounded-full bg-red-50 px-3 py-1 font-body text-xs font-semibold uppercase tracking-wide text-brand-rose">
+                    {xperience.tag}
+                  </span>
+                  <h3 className="font-display text-xl font-bold text-brand-maroon">
+                    {xperience.title}
+                  </h3>
+                  <p className="mt-3 flex-1 font-body text-sm text-gray-500">{xperience.body}</p>
+                  <Link
+                    to="/xperiences"
+                    className="mt-6 inline-block font-body text-sm font-semibold text-brand-rose transition-opacity hover:opacity-75"
+                  >
+                    View all Xperiences &rarr;
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
